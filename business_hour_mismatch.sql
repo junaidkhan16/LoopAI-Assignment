@@ -22,7 +22,7 @@ Mismatch_Categories AS (
         uber_eats_business_hours,
         open_diff_minutes,
         close_diff_minutes,
-        -- Define mismatch categories
+
         CASE
             WHEN open_diff_minutes BETWEEN 0 AND 5 AND close_diff_minutes BETWEEN 0 AND 5 THEN 'In Range'
             WHEN (open_diff_minutes > 5 OR open_diff_minutes < -5) OR (close_diff_minutes > 5 OR close_diff_minutes < -5) THEN 'Out of Range'
